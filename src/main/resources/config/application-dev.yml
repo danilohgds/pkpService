@@ -1,0 +1,9 @@
+server:
+    port: $PORT
+
+spring:
+    profiles:
+        active: prod
+    data:
+        mongodb:
+            database: pkpdb
