@@ -26,8 +26,8 @@ public class LostItemService {
         return lostItemRepository.findAll();
     }
 
-    public Optional<LostItem> findLostItemByUserId(String userId) {
-        return lostItemRepository.findByUserId(userId);
+    public List<LostItem> findAllByUserId(String userId) {
+        return lostItemRepository.findAllByUserId(userId);
     }
 
     public Optional<LostItem> findLostItem(String id) {
