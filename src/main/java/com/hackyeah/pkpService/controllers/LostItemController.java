@@ -21,7 +21,7 @@ public class LostItemController {
         return lostItemService.findAllByUserId(userId);
     }
 
-    @RequestMapping
+    @RequestMapping(method = RequestMethod.POST)
     public LostItem create(@RequestBody LostItem lostItem) {
         return lostItemService.create(lostItem);
     }
