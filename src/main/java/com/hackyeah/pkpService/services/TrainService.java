@@ -29,8 +29,8 @@ public class TrainService {
         return trainRepository.findAll();
     }
 
-    public Set<Seat> findSeatsByWagonType(String trainNumber, int wagonType) {
-        Optional<Train> trainOptional = trainRepository.findByTrainNumber(trainNumber);
+    public Set<Seat> findSeatsByWagonType(String id, int wagonType) {
+        Optional<Train> trainOptional = trainRepository.findById(id);
 
         if(!trainOptional.isPresent()){
             throw new IllegalArgumentException("Train with given number doesn't exist");

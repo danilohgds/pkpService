@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface TrainRepository extends MongoRepository<Train, String> {
-    Optional<Train> findByTrainNumber(String trainNumber);
+    Optional<Train> findById(String id);
 }
