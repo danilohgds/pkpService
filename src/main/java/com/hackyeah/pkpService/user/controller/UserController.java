@@ -4,17 +4,17 @@ import com.hackyeah.pkpService.entities.User;
 import com.hackyeah.pkpService.user.dto.Authorization;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
+
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
-
-    @RequestMapping(value = "/authorize", method = RequestMethod.POST)
+    @RequestMapping(value = "/authorize", method = POST)
     public User authorize(@RequestBody Authorization authorization) {
         if (authorization.getPassword().equals("epam2018")) {
             return new User(
