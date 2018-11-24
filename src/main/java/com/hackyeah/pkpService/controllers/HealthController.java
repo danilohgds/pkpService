@@ -15,8 +15,4 @@ public class HealthController {
 		
 	}
 	
-	@RequestMapping("/hello")
-	String hello() {
-	  	    return "hello";
-	}
 }
