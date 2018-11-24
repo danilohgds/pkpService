@@ -1,0 +1,5 @@
+{
+  "name": "pkpservice",
+  "description": "heroku app",
+  "addons": [ "heroku-mongolab" ]
+}
