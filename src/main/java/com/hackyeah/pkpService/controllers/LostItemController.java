@@ -2,9 +2,7 @@ package com.hackyeah.pkpService.controllers;
 
 import com.hackyeah.pkpService.entities.LostItem;
 import com.hackyeah.pkpService.services.LostItemService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,8 +16,13 @@ public class LostItemController {
         this.lostItemService = lostItemService;
     }
 
-    @RequestMapping(value = "byUserId")
+    @RequestMapping(value = "byUserId", method = RequestMethod.GET)
     public List<LostItem> findAllByUserId(@RequestParam String userId) {
         return lostItemService.findAllByUserId(userId);
+    }
+
+    @RequestMapping
+    public LostItem create(@RequestBody LostItem lostItem) {
+        return lostItemService.create(lostItem);
     }
 }
