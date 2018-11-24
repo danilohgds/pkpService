@@ -1,5 +1,8 @@
 package com.hackyeah.pkpService.entities;
 
+import lombok.Getter;
+
+@Getter
 public enum WagonType {
 
     FIRST_CLASS("1ST CLASS"),
