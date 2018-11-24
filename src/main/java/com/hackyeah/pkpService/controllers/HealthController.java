@@ -9,9 +9,9 @@ public class HealthController {
 
 	@GetMapping("/health")
 	@ResponseBody
-	public String getHealth(){
+	public String getHealth() {
 		return "Backend is up and Running";
-		
+
 	}
-	
+
 }
