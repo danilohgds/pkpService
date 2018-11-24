@@ -5,10 +5,17 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 @Document("lost_items")
 @Getter
 @Setter
 public class LostItem {
+
+    @Id
+    @GeneratedValue
+    private String id;
 
     private String name;
 
