@@ -1,12 +1,12 @@
 package com.hackyeah.pkpService.controllers;
 
 import com.hackyeah.pkpService.entities.Train;
+import com.hackyeah.pkpService.entities.WagonType;
 import com.hackyeah.pkpService.services.TrainService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class TrainController {
@@ -14,7 +14,6 @@ public class TrainController {
     private TrainService trainService;
 
     @Autowired
-
     public TrainController(TrainService trainService) {
         this.trainService = trainService;
     }
@@ -23,4 +22,11 @@ public class TrainController {
     public Train create(@RequestBody Train train) {
         return trainService.create(train);
     }
+
+    @RequestMapping(value = "all")
+    public List<Train> findAll() {
+        return trainService.findAll();
+    }
+
+
 }
