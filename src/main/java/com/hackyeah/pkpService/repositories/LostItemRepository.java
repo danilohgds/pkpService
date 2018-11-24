@@ -11,4 +11,5 @@ import java.util.Optional;
 public interface LostItemRepository extends MongoRepository<LostItem, String> {
     Optional<LostItem> findById(String id);
     List<LostItem> findAllByUserId(String userId);
+    List<LostItem> findAllByTripId(String tripId);
 }
