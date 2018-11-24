@@ -1,4 +1,5 @@
 {
   "name": "pkpService",
-  "description": "heroku app"
+  "description": "heroku app",
+  "addons": [ "heroku-mongolab" ]
 }
