@@ -1,9 +1,16 @@
 package com.hackyeah.pkpService.entities;
 
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.Getter;
+import lombok.Setter;
 
-import javax.persistence.Entity;
-
-@Document
+@Getter
+@Setter
 public class Seat {
+
+    private Integer wagonNumber;
+
+    private WagonType wagonType;
+
+    private Integer seatNumber;
+
 }
