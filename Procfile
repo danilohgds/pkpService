@@ -1,1 +1,1 @@
-worker: java -jar target/*.jar --spring.profiles.active=prod --server.port=$PORT --spring.data.mongodb.uri=mongodb://appuser:epam2018@ds125482.mlab.com:25482/heroku_hlzf9ft8	
+web: java -jar target/*.jar --spring.profiles.active=prod --server.port=$PORT --spring.data.mongodb.uri=mongodb://appuser:epam2018@ds125482.mlab.com:25482/heroku_hlzf9ft8	
