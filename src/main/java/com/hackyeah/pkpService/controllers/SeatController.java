@@ -22,8 +22,8 @@ public class SeatController {
 
 
     @RequestMapping(value = "byWagonType")
-    public Set<Seat> findByWagonClass(@RequestParam String trainNumber, @RequestParam int wagonType){
-        return trainService.findSeatsByWagonType(trainNumber,wagonType);
+    public Set<Seat> findByWagonClass(@RequestParam String trainId, @RequestParam int wagonType){
+        return trainService.findSeatsByWagonType(trainId,wagonType);
     }
 
 }

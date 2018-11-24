@@ -17,8 +17,6 @@ public class Train {
     @GeneratedValue
     private String id;
 
-    private String trainNumber;
-
     private Set<Seat> seats;
 
 }
