@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Set;
 
-@Document
+@Document("trains")
 @Getter
 @Setter
 public class Train {
