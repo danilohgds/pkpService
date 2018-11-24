@@ -4,10 +4,7 @@ import com.hackyeah.pkpService.entities.Seat;
 import com.hackyeah.pkpService.nodes.City.City;
 import lombok.Getter;
 import lombok.Setter;
-import org.neo4j.ogm.annotation.EndNode;
-import org.neo4j.ogm.annotation.Id;
-import org.neo4j.ogm.annotation.RelationshipEntity;
-import org.neo4j.ogm.annotation.StartNode;
+import org.neo4j.ogm.annotation.*;
 
 import java.time.Instant;
 import java.util.List;
@@ -18,6 +15,7 @@ import java.util.List;
 public class Trip {
 
     @Id
+    @GeneratedValue
     private String id;
 
     @StartNode
