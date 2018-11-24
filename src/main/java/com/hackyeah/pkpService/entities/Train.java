@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Set;
+import java.util.List;
 
 @Document("trains")
 @Getter
@@ -17,6 +17,6 @@ public class Train {
     @GeneratedValue
     private String id;
 
-    private Set<Seat> seats;
+    private List<Seat> seats;
 
 }
