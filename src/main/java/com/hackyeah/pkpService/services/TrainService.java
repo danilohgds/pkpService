@@ -32,11 +32,21 @@ public class TrainService {
     public Set<Seat> findSeatsByWagonType(String id, int wagonType) {
         Optional<Train> trainOptional = trainRepository.findById(id);
 
-        if(!trainOptional.isPresent()){
+        if (!trainOptional.isPresent()) {
             throw new IllegalArgumentException("Train with given number doesn't exist");
         }
 
-        return trainOptional.get().getSeats().stream().filter(seat -> seat.getWagonType().getTypeId()==wagonType)
+        return trainOptional.get().getSeats().stream().filter(seat -> seat.getWagonType().getTypeId() == wagonType)
                 .collect(Collectors.toSet());
+    }
+
+    public List<Seat> findSeatsByTrainId(String id) {
+        Optional<Train> trainOptional = trainRepository.findById(id);
+
+        if (!trainOptional.isPresent()) {
+            throw new IllegalArgumentException("Train with given number doesn't exist");
+        }
+
+        return trainOptional.get().getSeats();
     }
 }

@@ -15,8 +15,6 @@ public class PurchasedTicket {
     @Id
     private String id;
 
-    private String tripId;
-
     private String userName;
 
     private String passengerFullName;

@@ -30,7 +30,7 @@ public class TrainDataMock {
             Train train = new Train();
             List<Seat> seats = new ArrayList<>();
             for (int w = 0; w <= 2; w++) {
-                for (int s = 1; s <= 120; s++) {
+                for (int s = 1; s <= 8; s++) {
                     Seat seat = new Seat();
                     seat.setSeatNumber(s);
                     seat.setWagonNumber(w + 1);
