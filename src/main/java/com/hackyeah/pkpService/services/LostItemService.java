@@ -30,6 +30,9 @@ public class LostItemService {
         return lostItemRepository.findAllByUserId(userId);
     }
 
+    public List<LostItem> findByTripId(String tripId) {
+        return lostItemRepository.findAllByTripId(tripId);
+    }
     public Optional<LostItem> findLostItem(String id) {
         return lostItemRepository.findById(id);
     }

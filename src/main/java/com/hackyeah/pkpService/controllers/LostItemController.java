@@ -16,6 +16,11 @@ public class LostItemController {
         this.lostItemService = lostItemService;
     }
 
+    @RequestMapping(method = RequestMethod.GET)
+    public List<LostItem> findAll() {
+        return lostItemService.findAll();
+    }
+
     @RequestMapping(value = "byUserId", method = RequestMethod.GET)
     public List<LostItem> findAllByUserId(@RequestParam String userId) {
         return lostItemService.findAllByUserId(userId);
@@ -24,5 +29,10 @@ public class LostItemController {
     @RequestMapping(method = RequestMethod.POST)
     public LostItem create(@RequestBody LostItem lostItem) {
         return lostItemService.create(lostItem);
+    }
+
+    @RequestMapping(value = "byTripId", method = RequestMethod.GET)
+    public List<LostItem> findByTripId(@RequestParam String tripId) {
+        return lostItemService.findByTripId(tripId);
     }
 }
