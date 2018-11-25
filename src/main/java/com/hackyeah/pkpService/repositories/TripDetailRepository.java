@@ -12,5 +12,5 @@ import java.util.Optional;
 public interface TripDetailRepository extends MongoRepository<TripDetail, String> {
     Optional<TripDetail> findByTripId(String tripId);
     List<TripDetail> findAllByTrainId(String trainId);
-    List<TripDetail> findAllByStrartAndEndTime(Instant startTime, Instant endTime);
+    List<TripDetail> findAllByStartTimeAndEndTime(Instant startTime, Instant endTime);
 }

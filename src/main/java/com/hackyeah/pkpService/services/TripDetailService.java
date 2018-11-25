@@ -29,7 +29,7 @@ public class TripDetailService {
     }
 
     public List<TripDetail> findAllByStartAndEndTime(Instant startTime, Instant endTime) {
-        return tripDetailRepository.findAllByStrartAndEndTime(startTime, endTime);
+        return tripDetailRepository.findAllByStartTimeAndEndTime(startTime, endTime);
     }
 
     public TripDetail create(TripDetail tripDetail) {

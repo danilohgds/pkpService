@@ -5,7 +5,6 @@ import com.hackyeah.pkpService.repositories.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.Instant;
 import java.util.List;
 
 @Service
@@ -18,15 +17,12 @@ public class TripService {
         this.tripRepository = tripRepository;
     }
 
-    public List<Trip> findTripByStartCityAndEndCity(String startCityId, String endCityId) {
-        return tripRepository.findByStartCityAndEndCity(startCityId, endCityId);
-    }
-
-    public List<Trip> findTripByStartTime(Instant startTime){
-        return tripRepository.findByStartTime(startTime);
-    }
-
     public Trip create(Trip trip) {
         return tripRepository.save(trip);
+    }
+
+
+    public List<Trip> findRoute1(String start, String end) {
+        return tripRepository.findRoute(start, end);
     }
 }
