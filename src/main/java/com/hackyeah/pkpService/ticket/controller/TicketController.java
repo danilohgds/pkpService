@@ -18,13 +18,13 @@ public class TicketController {
         this.ticketService = ticketService;
     }
 
-    @RequestMapping(value = "buy", method = RequestMethod.POST)
-    public PurchasedTicket buy(@RequestBody PurchasedTicket ticket) {
-        return ticketService.buy(ticket);
-    }
-
-    @RequestMapping("byUsername")
-    public List<PurchasedTicket> findByUsername(@RequestParam String username) {
-        return ticketService.findByUsername(username);
-    }
+//    @RequestMapping(value = "buy", method = RequestMethod.POST)
+//    public PurchasedTicket buy(@RequestBody PurchasedTicket ticket) {
+//        return ticketService.buy(ticket);
+//    }
+//
+//    @RequestMapping("byUsername")
+//    public List<PurchasedTicket> findByUsername(@RequestParam String username) {
+//        return ticketService.findByUsername(username);
+//    }
 }

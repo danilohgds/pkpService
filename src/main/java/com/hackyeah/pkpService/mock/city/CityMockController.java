@@ -21,4 +21,11 @@ public class CityMockController {
 
         return "MOCKED";
     }
+
+    @RequestMapping("/run2")
+    public String run2() {
+        cityDataMock.createTrips();
+
+        return "MOCKED";
+    }
 }
