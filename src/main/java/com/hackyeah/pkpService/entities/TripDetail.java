@@ -4,14 +4,21 @@ import com.hackyeah.pkpService.ticket.entities.PurchasedTicket;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.Instant;
 import java.util.List;
 
+@Document("trip_details")
 @Getter
 @Setter
 @NoArgsConstructor
 public class TripDetail {
+
+    @Id
+    @GeneratedValue
     private String id;
     private String tripId;
     private String trainId;
