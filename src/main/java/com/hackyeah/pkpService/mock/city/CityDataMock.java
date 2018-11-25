@@ -2,13 +2,17 @@ package com.hackyeah.pkpService.mock.city;
 
 import com.hackyeah.pkpService.city.repositories.CityRepository;
 import com.hackyeah.pkpService.entities.Train;
+import com.hackyeah.pkpService.entities.TripDetail;
 import com.hackyeah.pkpService.nodes.City.City;
 import com.hackyeah.pkpService.relationships.Trip;
+import com.hackyeah.pkpService.repositories.TripDetailRepository;
 import com.hackyeah.pkpService.repositories.TripRepository;
 import com.hackyeah.pkpService.services.TrainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 @Component
@@ -58,7 +62,8 @@ public class CityDataMock {
         t1.setStartCity(c1);
 //        c1.registerDirecion(c2);
         t1.setEndCity(c2);
-        tripRepository.save(t1);
+        Trip save = tripRepository.save(t1);
+        createTripDetail(save, 90);
 //        cityRepository.save(c1);
 
         Trip t2 = new Trip();
@@ -66,7 +71,8 @@ public class CityDataMock {
         t2.setStartCity(c1);
         t2.setEndCity(c2);
 //        c1.registerDirecion(c2);
-        tripRepository.save(t2);
+        Trip save1 = tripRepository.save(t2);
+        createTripDetail(save1, 120);
 //        cityRepository.save(c1);
 
         // c2 to c1
@@ -75,9 +81,9 @@ public class CityDataMock {
         t3.setStartCity(c2);
         t3.setEndCity(c1);
 //        c2.registerDirecion(c1);
-        tripRepository.save(t3);
+        Trip save2 = tripRepository.save(t3);
 //        cityRepository.save(c2);
-
+        createTripDetail(save2, 75);
 
         // c2 to c3
         Trip t4 = new Trip();
@@ -85,7 +91,7 @@ public class CityDataMock {
         t4.setStartCity(c2);
         t4.setEndCity(c3);
 //        c2.registerDirecion(c3);
-        tripRepository.save(t4);
+        createTripDetail(tripRepository.save(t4), 85);
 //        cityRepository.save(c2);
 
 
@@ -94,7 +100,7 @@ public class CityDataMock {
         t5.setStartCity(c2);
         t5.setEndCity(c3);
 //        c2.registerDirecion(c3);
-        tripRepository.save(t5);
+        createTripDetail(tripRepository.save(t5), 130);
 //        cityRepository.save(c2);
 
         // c3 to c2
@@ -103,7 +109,7 @@ public class CityDataMock {
         t6.setStartCity(c3);
         t6.setEndCity(c2);
 //        c3.registerDirecion(c2);
-        tripRepository.save(t6);
+        createTripDetail(tripRepository.save(t6), 110);
 //        cityRepository.save(c3);
 
         // c1 to c4
@@ -112,7 +118,21 @@ public class CityDataMock {
         t7.setStartCity(c1);
         t7.setEndCity(c4);
 //        c1.registerDirecion(c4);
-        tripRepository.save(t7);
+        createTripDetail(tripRepository.save(t7), 95);
 //        cityRepository.save(c1);
+    }
+
+    @Autowired
+    private TripDetailRepository tripDetailRepository;
+
+    private void createTripDetail(Trip save, int duration) {
+        Instant now = Instant.now();
+        TripDetail tripDetail = new TripDetail();
+        tripDetail.setStartTime(now);
+        tripDetail.setTrainId(save.getTrainId());
+        tripDetail.setTripId(save.getId());
+        tripDetail.setEndTime(now.plus(duration, ChronoUnit.MINUTES));
+
+        tripDetailRepository.save(tripDetail);
     }
 }

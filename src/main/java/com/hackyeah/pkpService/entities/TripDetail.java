@@ -20,7 +20,7 @@ public class TripDetail {
     @Id
     @GeneratedValue
     private String id;
-    private String tripId;
+    private Long tripId;
     private String trainId;
     private Instant startTime;
     private Instant endTime;

@@ -1,5 +1,6 @@
 package com.hackyeah.pkpService.controllers;
 
+import com.hackyeah.pkpService.dto.Station;
 import com.hackyeah.pkpService.relationships.Trip;
 import com.hackyeah.pkpService.services.TripService;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +27,7 @@ public class TripController {
 
 
     @RequestMapping("/route/{start}/to/{end}")
-    public List<Trip> findRoute(@PathVariable String start, @PathVariable String end) {
+    public List<Station> findRoute(@PathVariable String start, @PathVariable String end) {
         return tripService.findRoute(start, end);
     }
 
