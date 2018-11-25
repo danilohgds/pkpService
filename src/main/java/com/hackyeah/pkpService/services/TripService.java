@@ -22,7 +22,7 @@ public class TripService {
     }
 
 
-    public List<Trip> findRoute1(String start, String end) {
+    public List<Trip> findRoute(String start, String end) {
         return tripRepository.findRoute(start, end);
     }
 }
