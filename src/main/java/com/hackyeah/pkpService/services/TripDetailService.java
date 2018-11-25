@@ -2,7 +2,6 @@ package com.hackyeah.pkpService.services;
 
 import com.hackyeah.pkpService.entities.TripDetail;
 import com.hackyeah.pkpService.repositories.TripDetailRepository;
-import com.hackyeah.pkpService.repositories.TripRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,7 @@ public class TripDetailService {
         return tripDetailRepository.findByTripId(tripId);
     }
 
-    public List<TripDetail> findAlllByTrainId(String trainId) {
+    public List<TripDetail> findAllByTrainId(String trainId) {
         return tripDetailRepository.findAllByTrainId(trainId);
     }
 

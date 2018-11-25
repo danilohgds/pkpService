@@ -2,6 +2,7 @@ package com.hackyeah.pkpService.controllers;
 
 import com.hackyeah.pkpService.entities.TripDetail;
 import com.hackyeah.pkpService.services.TripDetailService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
@@ -14,6 +15,7 @@ public class TripDetailController {
 
     private TripDetailService tripDetailService;
 
+    @Autowired
     public TripDetailController(TripDetailService tripDetailService) {
         this.tripDetailService = tripDetailService;
     }
@@ -25,7 +27,7 @@ public class TripDetailController {
 
     @RequestMapping(value = "byTrainId", method = RequestMethod.GET)
     public List<TripDetail> findAllByTrinId(@RequestParam String trainId) {
-        return tripDetailService.findAlllByTrainId(trainId);
+        return tripDetailService.findAllByTrainId(trainId);
     }
 
     @RequestMapping(value = {"byStartDate", "byEndDate"}, method = RequestMethod.GET)
