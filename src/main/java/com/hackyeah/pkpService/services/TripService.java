@@ -25,4 +25,8 @@ public class TripService {
     public List<Trip> findTripByStartTime(Instant startTime){
         return tripRepository.findByStartTime(startTime);
     }
+
+    public Trip create(Trip trip) {
+        return tripRepository.save(trip);
+    }
 }
